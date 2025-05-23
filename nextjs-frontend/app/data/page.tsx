@@ -7,7 +7,7 @@ export default function DataDisplayPage() {
   const [editData, setEditData] = useState({ name: '', email: '', age: '', gender: '', message: '' });
 
   const fetchEntries = async () => {
-    const res = await fetch('http://localhost:5000/api/data');
+    const res = await fetch('https://full-stack-app-88ue.onrender.com/api/data');
     const data = await res.json();
     setEntries(data);
   };
@@ -17,7 +17,7 @@ export default function DataDisplayPage() {
   }, []);
 
   const handleDelete = async (id) => {
-    await fetch(`http://localhost:5000/api/data/${id}`, { method: 'DELETE' });
+    await fetch(`https://full-stack-app-88ue.onrender.com/api/data/${id}`, { method: 'DELETE' });
     fetchEntries();
   };
 
@@ -33,7 +33,7 @@ export default function DataDisplayPage() {
   };
 
   const handleUpdate = async () => {
-    await fetch(`http://localhost:5000/api/data/${editingId}`, {
+    await fetch(`https://full-stack-app-88ue.onrender.com/api/data/${editingId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(editData),

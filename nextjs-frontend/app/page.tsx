@@ -24,7 +24,7 @@ export default function FormPage() {
       return;
     }
     setError('');
-    const res = await fetch('http://localhost:5000/api/submit', {
+    const res = await fetch('https://full-stack-app-88ue.onrender.com/api/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
